@@ -1,4 +1,4 @@
-package com.vaadin.flow.component.sparkline;
+package com.vaadin.componentfactory.sparkline;
 
 /*
  * #%L
@@ -6,26 +6,27 @@ package com.vaadin.flow.component.sparkline;
  * %%
  * Copyright (C) 2019 Vaadin Ltd
  * %%
- * This program is available under Commercial Vaadin Add-On License 3.0
- * (CVALv3).
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  * 
- * See the file license.html distributed with this software for more
- * information about licensing.
+ *      http://www.apache.org/licenses/LICENSE-2.0
  * 
- * You should have received a copy of the CVALv3 along with this program.
- * If not, see <http://vaadin.com/license/cval-3>.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  * #L%
  */
 
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.*;
-import com.vaadin.flow.component.sparklinerenderer.SparkLinePlotBand;
-import com.vaadin.flow.component.sparklinerenderer.SparklineConfiguration;
-import com.vaadin.flow.component.sparklinerenderer.SparklineValues;
-import com.vaadin.flow.internal.UsageStatistics;
+import com.vaadin.componentfactory.sparklinerenderer.SparkLinePlotBand;
+import com.vaadin.componentfactory.sparklinerenderer.SparklineConfiguration;
+import com.vaadin.componentfactory.sparklinerenderer.SparklineValues;
 import com.vaadin.flow.server.StreamResource;
 import com.vaadin.flow.server.StreamResourceWriter;
-import com.vaadin.pro.licensechecker.LicenseChecker;
 import org.apache.batik.svggen.SVGGraphics2D;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.DateAxis;
@@ -53,7 +54,7 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * Sparkline for Vaadin 13.
+ * Sparkline for Vaadin Flow.
  */
 @Tag("object")
 public class Sparkline extends Component implements HasSize, HasStyle {
@@ -67,8 +68,6 @@ public class Sparkline extends Component implements HasSize, HasStyle {
 
     private SparklineConfiguration sparklineConfiguration;
     private SparklineValues sparklineValues;
-
-    private static boolean licenceVerified;
 
     /**
      * Create a Sparkline with given SparklineValues and default SparklineConfiguration.
@@ -142,11 +141,6 @@ public class Sparkline extends Component implements HasSize, HasStyle {
      * Draw the sparkline as a JFreeChart
      */
     protected JFreeChart drawChart(SparklineValues values, SparklineConfiguration configuration) {
-        UI ui = UI.getCurrent();
-        if (ui != null) {
-            verifyLicense(ui.getSession().getConfiguration().isProductionMode());
-        }
-
         TimeSeriesCollection dataSet = new TimeSeriesCollection();
         TimeSeries data = new TimeSeries("Sparkline");
 
@@ -321,11 +315,4 @@ public class Sparkline extends Component implements HasSize, HasStyle {
         }
     }
 
-    private void verifyLicense(boolean productionMode) {
-        if (!productionMode && !licenceVerified) {
-            LicenseChecker.checkLicense(PROJECT_NAME, PROJECT_VERSION);
-            UsageStatistics.markAsUsed(PROJECT_NAME, PROJECT_VERSION);
-            licenceVerified = true;
-        }
-    }
 }

@@ -1,4 +1,4 @@
-package com.vaadin.flow.component.sparkline;
+package com.vaadin.componentfactory.sparkline;
 
 import com.vaadin.testbench.TestBenchElement;
 import org.junit.Assert;
