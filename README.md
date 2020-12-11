@@ -1,14 +1,7 @@
 # Vaadin Sparkline
 
-Vaadin Sparkline is a standalone sparkline component for Vaadin 13. See also Grid Sparkline renderer: https://vaadin.com/directory/component/grid-sparklinerenderer-flow
+Vaadin Sparkline is a standalone sparkline component for Vaadin Flow. See also Grid Sparkline renderer: https://vaadin.com/directory/component/grid-sparklinerenderer-flow
 
-## License & Author
-
-This Add-on is distributed under [Commercial Vaadin Add-on License version 3](http://vaadin.com/license/cval-3) (CVALv3). For license terms, see LICENSE.txt.
-
-Vaadin Sparkline is written by Vaadin Ltd.
-
-To purchase a license, visit http://vaadin.com/pricing
 
 ### Installing
 Add Sparkline to your project
@@ -86,4 +79,14 @@ To build and install the project into the local repository run
 in the root directory. `-DskipITs` will skip the integration tests, which require a TestBench license. If you want to run all tests as part of the build, run
 
 ```mvn install```
+
+
+## License & Author
+
+This Add-on is distributed under Apache 2.0
+
+Component Factory Sparkline is written by Vaadin Ltd.
+
+### Sponsored development
+Major pieces of development of this add-on has been sponsored by multiple customers of Vaadin. Read more  about Expert on Demand at: [Support](https://vaadin.com/support) and  [Pricing](https://vaadin.com/pricing)
 

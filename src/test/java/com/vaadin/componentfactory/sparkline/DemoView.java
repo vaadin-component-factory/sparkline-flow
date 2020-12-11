@@ -1,9 +1,9 @@
-package com.vaadin.flow.component.sparkline;
+package com.vaadin.componentfactory.sparkline;
 
 import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.component.sparklinerenderer.SparkLinePlotBand;
-import com.vaadin.flow.component.sparklinerenderer.SparklineConfiguration;
-import com.vaadin.flow.component.sparklinerenderer.SparklineValues;
+import com.vaadin.componentfactory.sparklinerenderer.SparkLinePlotBand;
+import com.vaadin.componentfactory.sparklinerenderer.SparklineConfiguration;
+import com.vaadin.componentfactory.sparklinerenderer.SparklineValues;
 import com.vaadin.flow.router.Route;
 
 import java.awt.*;

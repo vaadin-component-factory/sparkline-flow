@@ -1,4 +1,4 @@
-package com.vaadin.flow.component.sparkline;
+package com.vaadin.componentfactory.sparkline;
 
 import java.io.Serializable;
 import java.time.Instant;
